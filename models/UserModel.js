@@ -6,7 +6,6 @@ const userSchema = new mongoose.Schema({
     required: true,
     min: 3,
     max: 20,
-    // cannot have same username as someone else with an account
     unique: true,
   },
   email: {
@@ -22,7 +21,6 @@ const userSchema = new mongoose.Schema({
   },
   isAvatarImageSet: {
     type: Boolean,
-    // when user is created, default is no avatar image
     default: false,
   },
   avatarImage: {
