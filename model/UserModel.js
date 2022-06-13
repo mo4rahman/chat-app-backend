@@ -16,8 +16,19 @@ const userSchema = new mongoose.Schema({
     max: 50,
   },
   password: {
-      type: String,
-      required: true, 
-      min: 3
-  }
+    type: String,
+    required: true,
+    min: 3,
+  },
+  isAvatarImageSet: {
+    type: Boolean,
+    // when user is created, default is no avatar image
+    default: false,
+  },
+  avatarImage: {
+    type: String,
+    default: "",
+  },
 });
+
+module.exports = mongoose.model("Users", userSchema);
